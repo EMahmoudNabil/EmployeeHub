@@ -1,5 +1,7 @@
 # EmployeeHub
 
+
+
 ## Overview 🌟
 
 A full-stack application for managing employee data, built with .NET Core Web API backend and Angular frontend.
@@ -105,24 +107,24 @@ A full-stack application for managing employee data, built with .NET Core Web AP
 ## Screenshots 📸
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/05ac25e4-2733-4a82-92ee-8d568b343312" alt="Stracture Screen" width="80%" />
+  <img src="https://github.com/user-attachments/assets/adcb5b41-4855-40c6-8be6-675e7c9f86a0" alt="Stracture Screen" width="80%" />
   <p><em>Stracture App in API </em></p>
 
-  <img src="https://github.com/user-attachments/assets/4817a8f1-fc5e-4e40-a189-76807300268e" alt="EndPoint API" width="80%" />
+  <img src="https://github.com/user-attachments/assets/20cf64ef-57b5-494e-825b-7cef673a4695" alt="EndPoint API" width="80%" />
   <p><em>EndPoint API</em></p>
 
   
-  <img src="https://github.com/user-attachments/assets/701243bd-dc0b-4802-af4c-6f5973efe770" alt="Main Form" width="80%" />
+  <img src="https://github.com/user-attachments/assets/a4c10716-9591-423b-a3fd-53649f0b97d0" alt="Main Form" width="80%" />
   <p><em>Main Form</em></p>
- <img src="https://github.com/user-attachments/assets/e3576f84-b0f9-46b6-9cc9-8eab5f0317f2" alt="Add Form" width="80%" />
+ <img src="https://github.com/user-attachments/assets/4fed4b11-4dbd-4871-af4b-4caa4cb19987" alt="Add Form" width="80%" />
   <p><em>Add Form</em></p>
 
- <img src="https://github.com/user-attachments/assets/95a474b5-02b1-4302-8ec9-4c94b4e449d5" alt="Edit Form" width="80%" />
+ <img src="https://github.com/user-attachments/assets/625b9f12-b578-40ae-93f0-4b36999768f9" alt="Edit Form" width="80%" />
   <p><em>Edit Form</em></p>
 
-   <img src="https://github.com/user-attachments/assets/f03fc29b-6fb6-4ca8-9ca8-53ba9c7509d1" alt="Search " width="80%" />
+   <img src="https://github.com/user-attachments/assets/641baf41-5331-42fd-ab3b-4dcd67da6020" alt="Search " width="80%" />
   <p><em>Search</em></p>
-  <img src="https://github.com/user-attachments/assets/3adf19a2-8d2e-498b-952b-3bf588a8f72b" alt="pagination " width="80%" />
+  <img src="https://github.com/user-attachments/assets/85716315-172c-4fdb-852c-169d6f005e1b" alt="pagination " width="80%" />
   <p><em>pagination</em></p>
   
 </div>

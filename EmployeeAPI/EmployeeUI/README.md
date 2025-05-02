@@ -58,13 +58,12 @@ A full-stack application for managing employee data, built with .NET Core Web AP
    }
    ```
    Apply database migrations using Package Manager Console:
-  ```
-   bash
+  ```bash
+   
    Update-Database
   ```  
    Or using .NET CLI:
-  ```  
-   bash
+  ```bash  
    dotnet ef database update
   ```
 3. **Run the backend**

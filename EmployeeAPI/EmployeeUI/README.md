@@ -1,59 +1,143 @@
-# EmployeeUI
+# EmployeeHub
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+## Overview 🌟
 
-## Development server
+A full-stack application for managing employee data, built with .NET Core Web API backend and Angular frontend.
 
-To start a local development server, run:
+[Watch Demo Video](https://youtu.be/ZMH_rOWMhck)
 
-```bash
-ng serve
-```
+## Key Features ✨
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- View a list of all employees
+- Add new employees
+- Edit existing employee information
+- Delete employees
+- Search and filter employees by various criteria
+- Pagination for better performance with large datasets
+- Form validation for data integrity
 
-## Code scaffolding
+## Technologies Used 🛠️
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Backend
+- .NET Core Web API
+- Entity Framework Core
+- SQL Server
 
-```bash
-ng generate component component-name
-```
+### Frontend
+- Angular
+- Angular Material / Bootstrap
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Prerequisites 📋
 
-```bash
-ng generate --help
-```
+- [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0) or later
+- [Node.js](https://nodejs.org/) (v14 or later) with npm
+- [Angular CLI](https://angular.io/cli)
+- [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) or SQL Server (any edition)
+- Visual Studio 2022 (recommended) or Visual Studio Code
 
-## Building
+## Getting Started 🚀
 
-To build the project run:
+### Backend Setup
 
-```bash
-ng build
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/EmployeeHub.git
+   cd EmployeeHub
+   cd EmployeeAPI
+  
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+2. **Configure the database connection**
+   - Open the `appsettings.json` file in the backend project
+   - Update the connection string to match your SQL Server instance:
+   ```json
+   "ConnectionStrings": {
+     "con": "Data Source=YOUR-SERVER-NAME\\SQLEXPRESS;Initial Catalog=EmployeeAPI;Integrated Security=True;Encrypt=False; trust server certificate = true;"
+   }
+   ```
 
-## Running unit tests
+3. **Run the backend**
+   - Open the solution in Visual Studio and press F5, or
+   - Navigate to the backend directory and run:
+   ```bash
+   dotnet restore
+   dotnet build
+   dotnet run
+   ```
+   - The API will be available at `https://localhost:7257/api`
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Frontend Setup
 
-```bash
-ng test
-```
+1. **Navigate to the Angular project directory**
+   ```bash
+   cd EmployeeUI
+   ```
 
-## Running end-to-end tests
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-For end-to-end (e2e) testing, run:
+3. **Verify API URL configuration**
+   - Check the `environment.ts` file to ensure the API URL is correct:
+   ```typescript
+   export const environment = {
+     production: false,
+     apiUrl: 'https://localhost:7257/api',
+   };
+   ```
 
-```bash
-ng e2e
-```
+4. **Start the Angular application**
+   ```bash
+   npm start
+   ```
+   - The application will open in your default browser at `http://localhost:4200`
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## API Endpoints 🔌
 
-## Additional Resources
+- `GET /api/Employees` - Get all employees
+- `GET /api/Employees/filter?search=...&position=...&pageNumber=...&pageSize=...` - Get filtered employees with pagination
+- `GET /api/Employees/{id}` - Get a specific employee by ID
+- `POST /api/Employees` - Create a new employee
+- `PUT /api/Employees/{id}` - Update an existing employee
+- `DELETE /api/Employees/{id}` - Delete an employee
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Screenshots 📸
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/05ac25e4-2733-4a82-92ee-8d568b343312" alt="Stracture Screen" width="80%" />
+  <p><em>Stracture App in API </em></p>
+
+  <img src="https://github.com/user-attachments/assets/4817a8f1-fc5e-4e40-a189-76807300268e" alt="EndPoint API" width="80%" />
+  <p><em>EndPoint API</em></p>
+
+  
+  <img src="https://github.com/user-attachments/assets/701243bd-dc0b-4802-af4c-6f5973efe770" alt="Main Form" width="80%" />
+  <p><em>Main Form</em></p>
+ <img src="https://github.com/user-attachments/assets/e3576f84-b0f9-46b6-9cc9-8eab5f0317f2" alt="Add Form" width="80%" />
+  <p><em>Add Form</em></p>
+
+ <img src="https://github.com/user-attachments/assets/95a474b5-02b1-4302-8ec9-4c94b4e449d5" alt="Edit Form" width="80%" />
+  <p><em>Edit Form</em></p>
+
+   <img src="https://github.com/user-attachments/assets/f03fc29b-6fb6-4ca8-9ca8-53ba9c7509d1" alt="Search " width="80%" />
+  <p><em>Search</em></p>
+  <img src="https://github.com/user-attachments/assets/3adf19a2-8d2e-498b-952b-3bf588a8f72b" alt="pagination " width="80%" />
+  <p><em>pagination</em></p>
+  
+</div>
+
+## Usage 💻
+
+1. View the list of employees on the main page
+2. Click "Add Employee" to create a new employee record
+3. Click the edit icon next to an employee to modify their details
+4. Click the delete icon to remove an employee
+5. Use the search and filter functionalities to find specific employees
+6. Navigate between pages using the pagination controls
+
+## Acknowledgments 🙏
+
+- Angular Material/Bootstrap for UI components
+- .NET Core Web API for the backend implementation
+- Entity Framework Core for database operations

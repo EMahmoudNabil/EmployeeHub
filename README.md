@@ -57,7 +57,16 @@ A full-stack application for managing employee data, built with .NET Core Web AP
      "con": "Data Source=YOUR-SERVER-NAME\\SQLEXPRESS;Initial Catalog=EmployeeAPI;Integrated Security=True;Encrypt=False; trust server certificate = true;"
    }
    ```
-
+   Apply database migrations using Package Manager Console:
+  ```
+   bash
+   Update-Database
+    ```
+   Or using .NET CLI:
+    ```
+   bash
+   dotnet ef database update
+  ```
 3. **Run the backend**
    - Open the solution in Visual Studio and press F5, or
    - Navigate to the backend directory and run:

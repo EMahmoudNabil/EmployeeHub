@@ -61,9 +61,9 @@ A full-stack application for managing employee data, built with .NET Core Web AP
   ```
    bash
    Update-Database
-    ```
+  ```  
    Or using .NET CLI:
-    ```
+  ```  
    bash
    dotnet ef database update
   ```

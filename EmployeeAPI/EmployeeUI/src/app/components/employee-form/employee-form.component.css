@@ -1,0 +1,115 @@
+:host {
+    display: block;
+  }
+  
+  .dialog-title {
+    display: flex;
+    align-items: center;
+    color: #3f51b5;
+    font-weight: 500;
+    padding: 16px 16px 8px;
+    margin: 0;
+  }
+  
+  .title-icon {
+    margin-right: 8px;
+  }
+  
+  .dialog-content {
+    padding: 16px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .employee-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+  }
+  
+  .form-field {
+    flex: 1 1 300px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .field-icon {
+    color: #666;
+    margin-right: 8px;
+  }
+  
+  .readonly-field {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  
+  .dialog-actions {
+    padding: 16px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  
+  .save-button, .cancel-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 16px;
+    height: 36px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .save-button:hover:not([disabled]) {
+    background-color: #303f9f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cancel-button:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 599px) {
+    .form-row {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .form-field {
+      width: 100%;
+    }
+    
+    .dialog-actions {
+      flex-direction: column-reverse;
+      width: 100%;
+    }
+    
+    .save-button, .cancel-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  /* Animation for saving button */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .save-button:disabled mat-icon {
+    animation: spin 1.5s infinite linear;
+  }

@@ -1,0 +1,132 @@
+:host {
+    display: block;
+  }
+  
+  .confirm-dialog {
+    max-width: 450px;
+    width: 100%;
+  }
+  
+  .dialog-title {
+    display: flex;
+    align-items: center;
+    color: #f44336;
+    font-weight: 500;
+    padding: 16px 16px 8px;
+    margin: 0;
+  }
+  
+  .warning-icon {
+    margin-right: 12px;
+    font-size: 24px;
+    height: 24px;
+    width: 24px;
+  }
+  
+  .dialog-content {
+    padding: 24px 16px;
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .message-container {
+    width: 100%;
+  }
+  
+  .confirm-message {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  
+  .dialog-actions {
+    padding: 8px 16px 16px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  
+  .cancel-button, .confirm-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 16px;
+    height: 36px;
+    border-radius: 4px;
+    min-width: 80px;
+    transition: all 0.3s ease;
+  }
+  
+  .confirm-button {
+    box-shadow: 0 2px 4px rgba(244, 67, 54, 0.3);
+  }
+  
+  .confirm-button:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(244, 67, 54, 0.4);
+  }
+  
+  .cancel-button:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 599px) {
+    .dialog-actions {
+      flex-direction: column-reverse;
+      width: 100%;
+    }
+    
+    .cancel-button, .confirm-button {
+      width: 100%;
+      justify-content: center;
+      margin: 4px 0;
+    }
+    
+    .dialog-content {
+      padding: 16px;
+      min-height: 60px;
+    }
+  }
+  
+  /* Animation for buttons */
+  .confirm-button, .cancel-button {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .confirm-button:after, .cancel-button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+  
+  .confirm-button:focus:not(:active)::after, .cancel-button:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(0, 0);
+      opacity: 0.5;
+    }
+    20% {
+      transform: scale(25, 25);
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(40, 40);
+    }
+  }

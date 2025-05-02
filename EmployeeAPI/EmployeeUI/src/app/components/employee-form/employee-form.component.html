@@ -1,0 +1,91 @@
+<h2 mat-dialog-title class="dialog-title">
+  <mat-icon class="title-icon">{{ data.mode === 'add' ? 'person_add' : 'edit' }}</mat-icon>
+  {{ data.mode === 'add' ? 'Add New Employee' : 'Edit Employee' }}
+</h2>
+
+<mat-divider></mat-divider>
+
+<mat-dialog-content class="dialog-content">
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="employee-form">
+    <div class="form-row">
+      <div class="form-field">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>First Name</mat-label>
+          <mat-icon matPrefix class="field-icon">person</mat-icon>
+          <input matInput formControlName="firstName" required>
+          <mat-error *ngIf="formControls['firstName'].errors?.['required']">
+            First name is required
+          </mat-error>
+          <mat-error *ngIf="formControls['firstName'].errors?.['maxlength']">
+            First name cannot exceed 50 characters
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Last Name</mat-label>
+          <mat-icon matPrefix class="field-icon">person</mat-icon>
+          <input matInput formControlName="lastName" required>
+          <mat-error *ngIf="formControls['lastName'].errors?.['required']">
+            Last name is required
+          </mat-error>
+          <mat-error *ngIf="formControls['lastName'].errors?.['maxlength']">
+            Last name cannot exceed 50 characters
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field full-width">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Email</mat-label>
+          <mat-icon matPrefix class="field-icon">email</mat-icon>
+          <input matInput formControlName="email" required [readonly]="data.mode === 'edit'" 
+                 [class.readonly-field]="data.mode === 'edit'">
+          <mat-error *ngIf="formControls['email'].errors?.['required']">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="formControls['email'].errors?.['email']">
+            Invalid email format
+          </mat-error>
+          <mat-error *ngIf="formControls['email'].errors?.['maxlength']">
+            Email cannot exceed 100 characters
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field full-width">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Position</mat-label>
+          <mat-icon matPrefix class="field-icon">work</mat-icon>
+          <input matInput formControlName="position" required>
+          <mat-error *ngIf="formControls['position'].errors?.['required']">
+            Position is required
+          </mat-error>
+          <mat-error *ngIf="formControls['position'].errors?.['maxlength']">
+            Position cannot exceed 50 characters
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-divider></mat-divider>
+
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button mat-dialog-close class="cancel-button">
+    <mat-icon>close</mat-icon>
+    Cancel
+  </button>
+  <button mat-raised-button color="primary" 
+          (click)="onSubmit()" 
+          [disabled]="employeeForm.invalid || isSubmitting"
+          class="save-button">
+    <mat-icon>{{ isSubmitting ? 'hourglass_top' : 'save' }}</mat-icon>
+    {{ isSubmitting ? 'Saving...' : 'Save' }}
+  </button>
+</mat-dialog-actions>

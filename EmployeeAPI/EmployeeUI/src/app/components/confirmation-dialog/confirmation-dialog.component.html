@@ -1,0 +1,27 @@
+<div class="confirm-dialog">
+  <h2 mat-dialog-title class="dialog-title">
+    <mat-icon class="warning-icon">warning</mat-icon>
+    Confirm Action
+  </h2>
+
+  <mat-divider></mat-divider>
+
+  <mat-dialog-content class="dialog-content">
+    <div class="message-container">
+      <p class="confirm-message">{{ data.message }}</p>
+    </div>
+  </mat-dialog-content>
+
+  <mat-divider></mat-divider>
+
+  <mat-dialog-actions class="dialog-actions">
+    <button mat-button (click)="onNoClick()" class="cancel-button">
+      <mat-icon>close</mat-icon>
+      No
+    </button>
+    <button mat-raised-button color="warn" (click)="onYesClick()" class="confirm-button">
+      <mat-icon>check</mat-icon>
+      Yes
+    </button>
+  </mat-dialog-actions>
+</div>
